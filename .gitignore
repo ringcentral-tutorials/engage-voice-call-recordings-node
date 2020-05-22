@@ -1,4 +1,4 @@
 node_modules
 .DS_Store
 .env
-/recordings
+rc_tokens.txt

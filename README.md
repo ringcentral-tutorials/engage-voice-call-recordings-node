@@ -1,10 +1,10 @@
 # Read call metadata and call recording
-Read Engage Voice Agents' call metadata and download call recording files.
+Read Engage Voice agents' call metadata and download call recordings.
 
 ## Clone - Setup - Run the project
 ```
-$ git clone https://github.com/ringcentral-tutorials/engagevoice-callrecordings-node
-$ cd engagevoice-callrecordings-node
+$ git clone https://github.com/ringcentral-tutorials/engagevoice-call-recordings-node
+$ cd engagevoice-call-recordings-node
 $ npm install --save
 $ cp dotenv .env
 ```
