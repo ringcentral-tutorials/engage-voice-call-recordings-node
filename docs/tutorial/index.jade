@@ -1,0 +1,60 @@
+.chapter(data-title='Engage Voice Read Call Data Tutorial')
+ .step(data-title='Welcome!', data-file='../README.md', data-highlight='1-2')
+    :markdown
+      ## Welcome to the tutorial
+
+      This tutorial shows how to use Engage Voice platform APIs to read call history metadata, save the data into a CSV formatted file and download call recording files to a local machine.
+
+      To try out the tutorial code, you must have the following setups:
+
+      * A RingCentral Engage Voice account.
+
+      * A RingCentral Office account and a RingCentral developer account. Your RingCentral Office account must be associated with your Engage Voice account. This means that you are be able to login your Engage Voice account using your RingCentral Office login credentials.
+
+      * You also have to [create a RingCentral app](https://developer.ringcentral.com/library/getting-started.html) with the "ReadAccounts" permissions. And retrieve your app ClientId and ClientSecret for using with this tutorial. Remember to choose "Server-only (No UI)" for the app's platform type and "Password flow" for the Authorization flows.
+
+ .step(data-title='Clone the Project', data-file='../README.md', data-highlight='4-10')
+    :markdown
+      ## Clone the project from GitHub
+      Run the commands shown on the right-hand side to clone the project from GitHub
+
+      Navigate to the folder and install the dependencies
+
+      Rename the dotenv to .env, open it and provide your app credentials as well as your user login credentials.
+
+      __Important__: You must run the app on your production environment, make sure that your app is graduated and use the app production clientId and clientSecret.
+
+
+.step(data-title='Project Setup', data-file='../dotenv')
+   :markdown
+     ## Specify app and user login credentials
+     Open the .env file and provide valid app and user login credentials
+
+
+ .step(data-title='Use the EngageVoice SDK Wrapper', data-file='../index.js', data-highlight='1-15')
+  :markdown
+    ## Use the Engage Voice SDK Wrapper
+    First, we create the EngageVoice instance `ev` and initialize it with the clientId and clientSecret.
+
+    Then we call the `ev.login()` function to login Engage Voice platform with a valid RingCentral username, password and extension number (if required).
+
+ .step(data-title='Read Account Call History', data-file='../index.js', data-highlight='17-33')
+  :markdown
+    ## Read Account Call History
+    To read the account call history metadata, we call the __admin/accounts/[accountId]/json__ endpoint with the body parameters specified as shown on the right-hand side.
+
+    We specify the __startDate__ and the __endDate__ query parameters to define the date and time range when phone calls were made.
+
+ .step(data-title='Parse the Response', data-file='../index.js', data-highlight='38-64')
+  :markdown
+    ## Parse the JSON Response
+    In this tutorial, we convert the JSON response into a .csv formatted with the metadata we are interested at. We are also interested only at calls with call recording and that is why we check if the __callRecordingUrl_ exists.
+
+    After parsing all the calls' metadata, we save the content in a .csv file and proceed to downloading call recordings.
+
+ .step(data-title='Download Call Recordings', data-file='../index.js', data-highlight='69-92')
+  :markdown
+    ## Download Call Recordings
+    The SDK wrapper provides a function __save_call_recording(sourceUrl, fileName, ...)__ which download and save a call recording to a local folder.
+
+    In this tutorial, we want to download and save call recordings to a `recordings` folder and use the same source file name, which is the call's unique id `uii` and the index of call recording of the call.

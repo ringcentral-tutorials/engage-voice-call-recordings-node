@@ -1,0 +1,22 @@
+{
+  "name": "engagevoice-callrecordings-node",
+  "version": "1.0.0",
+  "description": "Read call recordings and download to local machine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ringcentral, engage voice, contact center"
+  ],
+  "author": "Paco-Vu",
+  "license": "MIT",
+  "dependencies": {
+    "engagevoice-sdk-wrapper": "^0.5.9",
+    "dotenv": "^6.0.0",
+    "async": "^2.6.1"
+  },
+  "engines": {
+    "node": "10.5"
+  }
+}

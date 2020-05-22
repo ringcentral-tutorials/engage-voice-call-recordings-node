@@ -1,0 +1,6 @@
+RC_APP_CLIENT_ID=Your_App_Production_ClientID
+RC_APP_CLIENT_SECRET=Your_App_Production_ClientSecret
+
+RC_USERNAME=Your_Production_Account_UserName
+RC_PASSWORD=Your_Production_Account_Password
+RC_EXTENSION_NUM=Your_Production_ExtensionNumber
