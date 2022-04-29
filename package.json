@@ -14,7 +14,7 @@
   "dependencies": {
     "engagevoice-sdk-wrapper": "^0.5.9",
     "dotenv": "^6.0.0",
-    "async": "^2.6.1"
+    "async": "^2.6.4"
   },
   "engines": {
     "node": "10.5"
